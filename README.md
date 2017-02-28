@@ -1,7 +1,11 @@
 # JSDrumKit
 
-This is the first lesson from the JS30 challenge.
-*Stuff I learned about:*
+This is the first lesson from the JS30 challenge by Wes Bos.
+A free 30 day vanilla js coding challenge.
+
+---
+
+*Stuff I learned:*
 
 - CSS3 display:flex, as well as animation of the keys' div.
 - transition: all 0.07s ease;
