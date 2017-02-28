@@ -2,7 +2,7 @@
 <html>
   <head>
   <title>JavaScript Drum</title>
-  <link rel="stylesheet" src="style.css">
+  <link rel="stylesheet" href="style.css">
   </head>
 <body>
   <div class="keys">
@@ -63,13 +63,27 @@
   <audio data-key="75" src="sounds/tink.wav"></audio>
   <audio data-key="76" src="sounds/tom.wav"></audio>
 
-  <script>
-    window.addEventListener('keydown', function(e) {
+<script>
 
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      console.log(audio);
+function playSound(e){
 
-    });
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+
+  if (!audio) return; //stop the function
+  audio.currentTime = 0; //rewinds to the start
+  audio.play();
+  key.classList.add("playing");
+}
+
+function removeTransition(e) {
+        if(e.propertyName !== "transform") return; //skip it 
+        this.classList.remove('playing');
+      }
+const keys = document.querySelectorAll('.key');
+keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+
+window.addEventListener('keydown', playSound);
   </script>
 </body>
 </html>
