@@ -2,6 +2,7 @@
 
 This is the first lesson from the JS30 challenge by Wes Bos.
 A free 30 day vanilla js coding challenge.
+https://easyjsdrum.herokuapp.com/
 
 ---
 
